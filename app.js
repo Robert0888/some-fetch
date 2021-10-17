@@ -7,14 +7,15 @@ document.querySelector('.form').addEventListener('click', function(e) {
     const data = await response.json()
 
     console.log(data);
-    data.articles.forEach(function(article){
-       console.log(article);
+    
+   const ranNum = Math.floor(Math.random() * 18) + 1
+   console.log(ranNum);
        
-    })
-    const author = data.articles[0].author
-    const title = data.articles[0].title
-    const text = data.articles[0].content;
-    const link = data.articles[0].url
+   
+    const author = data.articles[ranNum].author
+    const title = data.articles[ranNum].title
+    const text = data.articles[ranNum].content;
+    const link = data.articles[ranNum].url
     console.log(text);
     console.log(link);
     document.querySelector('.author').innerHTML = author
@@ -28,7 +29,7 @@ document.querySelector('.form').addEventListener('click', function(e) {
     
     // aTag.innerText =link
     const output2 =  document.querySelector('.output2')
-     output2.innerText = aTag.value
+     output2.innerText = aTag
 
 
    }
