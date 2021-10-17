@@ -1,3 +1,13 @@
+class News{
+   constructor(userEntry) {
+      this.userEntry = userEntry
+   }
+}
+
+class UI {
+   
+}
+
 document.querySelector('.form').addEventListener('click', function(e) {
    const key = '3c980e93e664447294c9342e9b0cfac1'
    console.log('submitted');
@@ -18,7 +28,8 @@ document.querySelector('.form').addEventListener('click', function(e) {
     const link = data.articles[ranNum].url
     console.log(text);
     console.log(link);
-    document.querySelector('.author').innerHTML = author
+    document.querySelector('.author').innerText = author
+    
     document.querySelector('.title').innerHTML = title
     
     document.querySelector('.output').innerText = text
@@ -29,7 +40,7 @@ document.querySelector('.form').addEventListener('click', function(e) {
     
     // aTag.innerText =link
     const output2 =  document.querySelector('.output2')
-     output2.innerText = aTag
+     output2.append(aTag)
 
 
    }
