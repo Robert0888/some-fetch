@@ -29,7 +29,7 @@ document.querySelector('.form').addEventListener('click', function(e) {
     console.log(text);
     console.log(link);
     document.querySelector('.author').innerText = author
-    
+
     document.querySelector('.title').innerHTML = title
     
     document.querySelector('.output').innerText = text
@@ -45,8 +45,32 @@ document.querySelector('.form').addEventListener('click', function(e) {
 
    }
    getNews()
+
+   let n = document.querySelector('#number').value;
+   let g = [];
+   for(i=0; i<n; i++){
+      let ran = Math.floor(Math.random() * 40) + 1
+      g.push(ran)
+   }
+   console.log(g);
+   for(i=0; i<n; i++){
+      for(j=i+1; j<n; j++) {
+         if(g[i]>g[j]) {
+            temp = g[i]
+            g[i] = g[j]
+            g[j] = temp
+         }
+      }
+      
+   }
+   console.log(g)
+   
  e.preventDefault();
 })
+
+
+
+
 
 
 
